@@ -1,58 +1,25 @@
 <template>
-  <v-container class="pa-0 white-text" fluid style="padding: 0 !important; ">
-    <appBar></appBar>
-    <v-row height="100%" style="background: linear-gradient(163deg, rgba(54,10,10,1) 0%, rgba(21,4,4,1) 21%, rgba(0,0,0,1) 69%);">
-      <Playlist></Playlist>
-      <v-col cols="4">
-        <musicQueue></musicQueue>
-      </v-col>
-    </v-row>
-    <v-row no-gutters>
-      <v-app-bar class=" playbar" dense fixed bottom>
-        <v-row class="mt-7" width="500px" style="width: 750px !important">
-          <v-btn icon >
-            <v-icon class="PlayIcons">mdi-skip-previous</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon class="PlayIcons">mdi-play</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon class="PlayIcons">mdi-skip-next</v-icon>
-          </v-btn>
-          <v-btn text>
-            <v-icon class="playText mt-2">Now you know</v-icon>
-          </v-btn>
-        </v-row>
-        <v-row class="mt-7" width="500px" style="width: 500px !important">
-          <v-btn icon >
-            <v-icon class="PlayIcons">mdi-shuffle</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon class="PlayIcons">mdi-repeat</v-icon>
-          </v-btn>
-            <v-slider
-              thumb-label
-              prepend-icon="mdi-volume-high"
-              color="#5D737E"
-              class="mb-n5"
-              width="10"                  
-              />
-        </v-row>
-      </v-app-bar>
-    </v-row>
-  </v-container>
+    <v-card class="mt-5 mr-16" flat color="transparent" style="background-color: #101111 !important; height: 80%; overflow-y: scroll">
+        <v-card-title style="color: white;">Queue</v-card-title>
+        <v-card class="songCard" v-for="(song, index) in songs" :key="index" color="transparent">
+            <v-list-item dense style="color: white !important;">
+              <v-list-item-avatar>
+                <v-avatar color="dark" size="36">
+                  <span>0{{index+1}}</span>
+                </v-avatar>
+              </v-list-item-avatar>
+              <v-img :src="song.coverAlbum" style="max-width:50px !important; height:50px !important"></v-img>
+              <v-list-item-content class="ml-5">
+                <v-list-item-title>{{song.songName}}<br/></v-list-item-title>
+                <v-list-item-subtitle style="color: white !important;">{{song.artist}}</v-list-item-subtitle>
+              </v-list-item-content>
+            </v-list-item>
+        </v-card>
+    </v-card>
 </template>
 
 <script>
-// import axios from 'axios'
-  import appBar from '@/components/MusicAppBar'
-  import musicQueue from '@/components/musicQueue'
-import Playlist from '@/components/Playlist.vue'
-
-  export default {
-    name: 'MusicApp',
-    components:{ appBar, musicQueue, Playlist },
-
+export default {
     data: () => ({
       songs: [
         {
@@ -136,33 +103,17 @@ import Playlist from '@/components/Playlist.vue'
           songLenght: '3:13'
 
         },
-      ]    
-      }),
-
-    methods:{
-      
-
-    }
-  }
+      ]
+    }),
+}
 </script>
+
 <style>
-.playbar{
-  background-color: rgba(37, 37, 37, 0.9) !important; 
-  height: 10vh !important; 
-  width: 100%;
-  border: white 0.5px solid ;
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 .songCard:hover{
   background-color: rgba(66, 66, 66, 0.5) !important;
 }
-.PlayIcons{
-    color: #ffffff !important;
-font-size: 35px !important
-}
-.playText{
-  color: white !important;
-  font-size: medium !important;
-}
 </style>
-
-<!-- https://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=D_boom&api_key=2e7d613dddaf284a1f89bbc37b835efe&limit=10&format=json&callback=? -->

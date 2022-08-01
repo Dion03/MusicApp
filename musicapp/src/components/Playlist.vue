@@ -1,57 +1,30 @@
 <template>
-  <v-container class="pa-0 white-text" fluid style="padding: 0 !important; ">
-    <appBar></appBar>
-    <v-row height="100%" style="background: linear-gradient(163deg, rgba(54,10,10,1) 0%, rgba(21,4,4,1) 21%, rgba(0,0,0,1) 69%);">
-      <Playlist></Playlist>
-      <v-col cols="4">
-        <musicQueue></musicQueue>
+      <v-col cols="8">
+        <v-card class="ml-16 mt-5" flat color="transparent" style="height: 100vh; overflow-y: scroll;">
+          <v-card-title style="color: white">Playlist</v-card-title>
+          <v-card class="mt-5 songCard" v-for="(song, index) in songs" :key="index" color="transparent">
+            <v-list-item dense style="color: white !important;">
+              <v-img :src="song.coverAlbum" style="max-width:50px !important; height:50px !important"></v-img>
+              <v-list-item-content class="ml-5">
+                <v-list-item-title class="textLG">{{song.songName}}<br/></v-list-item-title>
+              </v-list-item-content>
+              <v-list-item-content class="ml-5">
+                <v-list-item-title class="textLG">{{song.artist}}<br/></v-list-item-title>
+              </v-list-item-content>
+              <v-list-item-content class="ml-5">
+                <v-list-item-title class="textLG">{{song.songLenght}}<br/></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+        </v-card>
+        </v-card>
       </v-col>
-    </v-row>
-    <v-row no-gutters>
-      <v-app-bar class=" playbar" dense fixed bottom>
-        <v-row class="mt-7" width="500px" style="width: 750px !important">
-          <v-btn icon >
-            <v-icon class="PlayIcons">mdi-skip-previous</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon class="PlayIcons">mdi-play</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon class="PlayIcons">mdi-skip-next</v-icon>
-          </v-btn>
-          <v-btn text>
-            <v-icon class="playText mt-2">Now you know</v-icon>
-          </v-btn>
-        </v-row>
-        <v-row class="mt-7" width="500px" style="width: 500px !important">
-          <v-btn icon >
-            <v-icon class="PlayIcons">mdi-shuffle</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon class="PlayIcons">mdi-repeat</v-icon>
-          </v-btn>
-            <v-slider
-              thumb-label
-              prepend-icon="mdi-volume-high"
-              color="#5D737E"
-              class="mb-n5"
-              width="10"                  
-              />
-        </v-row>
-      </v-app-bar>
-    </v-row>
-  </v-container>
 </template>
 
 <script>
 // import axios from 'axios'
-  import appBar from '@/components/MusicAppBar'
-  import musicQueue from '@/components/musicQueue'
-import Playlist from '@/components/Playlist.vue'
 
   export default {
     name: 'MusicApp',
-    components:{ appBar, musicQueue, Playlist },
 
     data: () => ({
       songs: [
@@ -146,22 +119,11 @@ import Playlist from '@/components/Playlist.vue'
   }
 </script>
 <style>
-.playbar{
-  background-color: rgba(37, 37, 37, 0.9) !important; 
-  height: 10vh !important; 
-  width: 100%;
-  border: white 0.5px solid ;
-}
 .songCard:hover{
   background-color: rgba(66, 66, 66, 0.5) !important;
 }
-.PlayIcons{
-    color: #ffffff !important;
-font-size: 35px !important
-}
-.playText{
-  color: white !important;
-  font-size: medium !important;
+.textLG{
+    font-size: 1em !important;
 }
 </style>
 
