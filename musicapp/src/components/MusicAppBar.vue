@@ -70,25 +70,6 @@ data: () => ({
     }),
 }
 </script>
-<style scoped>
-.menuIcons{
-  color: #d4d4d4 !important;
-}
-.artistCards{
-  background-color:#741214 !important;
-  height: 200px;
-  width: 200px;
-  border-radius: 1em;
-}
-.artistBar{
-  height: 275px;
-}
-.artistImg{
-  width: 200px;
-  height:200px;
-  border-radius: 1em;
-}
-.cardZoom:hover{
-  transform: scale(1.2);
-}
-</style>
+<style scoped src="@/assets/css/style.css"></style>
+
+

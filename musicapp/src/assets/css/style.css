@@ -1,0 +1,66 @@
+.playbar
+{
+    background-color: rgba(37, 37, 37, 0.9) !important; 
+    height: 10vh !important; 
+    width: 100%;
+}
+.songCard:hover{
+    background-color: rgba(66, 66, 66, 0.5) !important;
+}
+.PlayIcons{
+    color: #ffffff !important;
+    font-size: 35px !important
+}
+.playText{
+    color: white !important;
+    font-size: medium !important;
+}
+.menuIcons{
+    color: #d4d4d4 !important;
+}
+.artistCards{
+    background-color:#741214 !important;
+    height: 200px;
+    width: 200px;
+    border-radius: 1em;
+}
+.artistBar{
+    height: 275px;
+}
+.artistImg{
+    width: 200px;
+    height:200px;
+    border-radius: 1em;
+}
+.cardZoom:hover{
+    transform: scale(1.2);
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+.songCard:hover{
+    background-color: rgba(66, 66, 66, 0.5) !important;
+}
+.queueCard{
+    background-color: #101111 !important; 
+    height: 80%; 
+    overflow-y: scroll;
+    border-radius: 1em !important;
+}
+.queueImg{
+    max-width:50px !important; 
+    height:50px !important
+}
+.textWhite{
+    color: white !important;
+}
+.songCard:hover{
+    background-color: rgba(66, 66, 66, 0.5) !important;
+}
+.textLG{
+    font-size: 1em !important;
+}
+.selected {
+    background-color:  #c23a3a !important;
+}

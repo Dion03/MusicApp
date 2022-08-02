@@ -9,7 +9,7 @@
                   <span>0{{index+1}}</span>
                 </v-avatar>
               </v-list-item-avatar>
-              <v-img :src="song.coverAlbum" class="queueImg"></v-img>
+              <v-img :src="song.coverAlbum" class="queueImg" style="max-width: 50px !important;"></v-img>
               <v-list-item-content class="ml-5">
                 <v-list-item-title>{{song.songName}}<br/></v-list-item-title>
                 <v-list-item-subtitle style="color: white !important;">{{song.artist}}</v-list-item-subtitle>
@@ -28,26 +28,4 @@ export default {
     }),
 }
 </script>
-
-<style>
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
-.songCard:hover{
-  background-color: rgba(66, 66, 66, 0.5) !important;
-}
-.queueCard{
-  background-color: #101111 !important; 
-  height: 80%; 
-  overflow-y: scroll;
-  border-radius: 1em !important;
-}
-.queueImg{
-  max-width:50px !important; 
-  height:50px !important
-}
-.textWhite{
-  color: white;
-}
-</style>
+<style scoped src="@/assets/css/style.css"></style>

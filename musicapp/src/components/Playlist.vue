@@ -43,16 +43,4 @@ methods: {
 }
   }
 </script>
-<style>
-.songCard:hover{
-  background-color: rgba(66, 66, 66, 0.5) !important;
-}
-.textLG{
-    font-size: 1em !important;
-}
-  .selected {
-    background-color:  #c23a3a !important;
-  }
-</style>
-
-<!-- https://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=D_boom&api_key=2e7d613dddaf284a1f89bbc37b835efe&limit=10&format=json&callback=? -->
+<style scoped src="@/assets/css/style.css"></style>

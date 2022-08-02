@@ -220,22 +220,4 @@ export default {
   } 
 }
 </script>
-<style>
-.playbar{
-  background-color: rgba(37, 37, 37, 0.9) !important; 
-  height: 10vh !important; 
-  width: 100%;
-  border: white 0.5px solid ;
-}
-.songCard:hover{
-  background-color: rgba(66, 66, 66, 0.5) !important;
-}
-.PlayIcons{
-    color: #ffffff !important;
-font-size: 35px !important
-}
-.playText{
-  color: white !important;
-  font-size: medium !important;
-}
-</style>
+<style scoped src="@/assets/css/style.css"></style>
