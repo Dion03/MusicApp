@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import MusicApp from '@/components/MusicApp'
+  import MusicApp from '@/views/MusicApp'
 
 
 export default {
