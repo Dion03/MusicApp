@@ -1,5 +1,5 @@
 # musicapp
-
+<a href="https://dmmusic.netlify.app/">View demo</a>
 ## Project setup
 ```
 npm install
